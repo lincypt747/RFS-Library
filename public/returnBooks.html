@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Return Books - RF-SMART Library Management">
+  <title>Return Books</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Heading for Return Books Section -->
+    <header>
+      <h1>Return Books</h1>
+    </header>
+
+    <!-- No Books Message -->
+    <section id="noBooksMessageSection">
+      <p id="noBooksMessage" style="display: none;">There are no books to return.</p>
+    </section>
+
+    <!-- Books Table for Returning -->
+    <section>
+      <table id="returnBooksTable" class="books-table">
+        <thead>
+          <tr>
+            <th>Select</th>
+            <th>Book Name</th>
+            <th>Author</th>
+            <th>Type</th>
+            <th>Checkout Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Book rows will be dynamically inserted here -->
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Action Buttons -->
+    <section class="button-row">
+      <button id="backButton" class="back-button" aria-label="Back to book list">Back to Books</button>
+      <button id="returnButton" class="return-books" disabled aria-label="Return selected books">Return Selected Books</button>
+    </section>
+  </div>
+
+  <!-- External JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>

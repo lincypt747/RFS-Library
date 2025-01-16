@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Library Management - Book List">
+  <title>Library Management - Book List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Books List</h1>
+    </header>
+
+    <!-- Action Buttons -->
+    <div class="button-row">
+      <button id="checkoutButton" class="checkout-button" disabled>Check Out Selected Books</button>
+      <button id="returnBooksButton" class="return-button">Return Books</button>
+      <button id="donateBooksButton" class="donate-button">Donate Books</button>
+      <button id="logoutButton" class="logout-button">Logout</button>
+    </div>
+
+    <!-- Available Books Section -->
+    <section>
+      <h2>Available Books to Check Out</h2>
+      <table id="availableBooksTable" class="books-table">
+        <thead>
+          <tr>
+            <th>Select</th>
+            <th>Book Name</th>
+            <th>Author</th>
+            <th>Type</th>
+            <th>Comments</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Available books will be dynamically inserted here -->
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Unavailable Books Section -->
+    <section>
+      <h2>Checked Out or Lost Books</h2>
+      <table id="unavailableBooksTable" class="books-table">
+        <thead>
+          <tr>
+            <th>Book Name</th>
+            <th>Author</th>
+            <th>Type</th>
+            <th>Comments</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Unavailable books will be dynamically inserted here -->
+        </tbody>
+      </table>
+    </section>
+  </div>
+
+  <!-- Donate Books Modal -->
+  <div id="donateModal" class="modal" style="display: none;">
+    <div class="modal-content">
+      <button class="close" id="closeModal" aria-label="Close">&times;</button>
+      <h2>Donate a Book</h2>
+      <form id="donateForm" class="donate-form" aria-label="Donate a Book Form">
+        <!-- Book Title -->
+        <div class="form-group">
+          <label for="title">Book Title:</label>
+          <input 
+            type="text" 
+            id="title" 
+            name="title" 
+            placeholder="Enter the book title" 
+            required
+            aria-required="true">
+        </div>
+        <!-- Author -->
+        <div class="form-group">
+          <label for="author">Author:</label>
+          <input 
+            type="text" 
+            id="author" 
+            name="author" 
+            placeholder="Enter the author's name" 
+            required
+            aria-required="true">
+        </div>
+        <!-- Type -->
+        <div class="form-group">
+          <label for="type">Type (Optional):</label>
+          <input 
+            type="text" 
+            id="type" 
+            name="type" 
+            placeholder="e.g., Fiction, Non-fiction">
+        </div>
+        <!-- Submit Button -->
+        <div class="form-group">
+          <button type="submit" class="submit-button">
+            Donate
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Script File -->
+  <script src="script.js"></script>
+</body>
+</html>

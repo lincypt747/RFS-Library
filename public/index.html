@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="RF-SMART Library Management System">
+  <title>RFS Library Management</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Library Image -->
+    <header>
+      <img src="img/img1.jpg" alt="Library" class="library-image">
+    </header>
+
+    <!-- Welcome Message -->
+    <section>
+      <h1>Welcome to RF-SMART Library Management</h1>
+    </section>
+
+    <!-- User Selection Dropdown -->
+    <section class="user-selection">
+      <label for="userSelect">Select a User:</label>
+      <select id="userSelect" aria-label="Select a user">
+        <option value="">-- Select a User --</option>
+        <!-- Dynamic user options will be added here -->
+      </select>
+    </section>
+
+    <!-- Enter System Button -->
+    <div class="button-container">
+      <button id="enterSystem" class="enter-button" disabled>
+        Enter System
+      </button>
+    </div>
+  </div>
+
+  <!-- External JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Book Details - RF-SMART Library">
+  <title>Book Details - RF-SMART Library</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- Book Details Section -->
+    <header>
+      <h1 id="bookTitle">Book Details</h1>
+    </header>
+
+    <!-- Comments List Section -->
+    <section>
+      <h2>Comments</h2>
+      <ul id="commentsList" class="comment-list">
+        <!-- Comments will be dynamically inserted here -->
+      </ul>
+    </section>
+
+    <!-- Comment Input Section -->
+    <section>
+      <textarea id="commentInput" placeholder="Add your comment..." aria-label="Add a comment"></textarea>
+    </section>
+
+    <!-- Buttons Section -->
+    <div class="button-row">
+      <button id="backButton" class="back-button" aria-label="Go back to book list">
+        Back to Books
+      </button>
+      <button id="submitComment" class="comment-button" aria-label="Submit your comment">
+        Submit Comment
+      </button>
+    </div>
+  </div>
+
+  <!-- External JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
