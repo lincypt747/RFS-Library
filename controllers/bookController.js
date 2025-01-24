@@ -37,7 +37,7 @@ exports.getAvailableBooks = async (req, res) => {
 // Get all unavailable books (checked out or lost)
 exports.getUnavailableBooks = async (req, res) => {
     try {
-        const [books] = await db.query('SELECT * FROM books WHERE status IN ("checked_out", "lost")');
+        const [books] = await db.query('SELECT * FROM books WHERE status IN ("checked_out", "lost") ORDER BY status');
         res.json(books);
     } catch (error) {
         res.status(500).send('Error fetching unavailable books');

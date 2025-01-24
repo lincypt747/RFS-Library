@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const returnBooksButton = document.getElementById('returnBooksButton');
   const returnBooksTableBody = document.querySelector('#returnBooksTable tbody');
   const returnButton = document.getElementById('returnButton');
+  const reportLostButton = document.getElementById('reportLostButton')
   const backButton = document.getElementById('backButton');
   const donateBooksButton = document.getElementById('donateBooksButton');
   const donateModal = document.getElementById('donateModal');
@@ -83,7 +84,10 @@ document.addEventListener('DOMContentLoaded', () => {
         row.innerHTML = `
           <td>${book.title}</td>
           <td>${book.author}</td>
-          <td>${book.category}</td>
+          <td>${book.category}</td> 
+          <td class="${book.status === 'lost' ? 'status-lost' : ''}">
+          ${book.status.charAt(0).toUpperCase() + book.status.slice(1)}
+          </td>
           <td><button class="details-button" onclick="viewBookDetails(${book.id})">View Details</button></td
         `;
       });
@@ -149,6 +153,7 @@ document.addEventListener('DOMContentLoaded', () => {
         noBooksMessage.style.display = 'block';
         returnBooksTableBody.innerHTML = '';
         returnButton.style.display = 'none';
+        reportLostButton.style.display = 'none';
       } else {
         noBooksMessage.style.display = 'none';
         books.forEach(book => {
@@ -174,6 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
           }
 
           returnButton.disabled = selectedBooksToReturn.length === 0;
+          reportLostButton.disabled = selectedBooksToReturn.length === 0;
         });
       }
     } catch (error) {
@@ -199,6 +205,28 @@ document.addEventListener('DOMContentLoaded', () => {
         }
       } catch (error) {
         console.error('Error returning books:', error);
+      }
+    });
+  }
+
+  // Report lost on Selected Books
+  if (reportLostButton) {
+    reportLostButton.addEventListener('click', async () => {
+      try {
+        const response = await fetch('/api/checkouts/lost', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ lostIds: selectedBooksToReturn }),
+        });
+
+        if (response.ok) {
+          alert('Books reported lost successfully!');
+          window.location.reload();
+        } else {
+          alert('Error reporting lost books');
+        }
+      } catch (error) {
+        console.error('Error reporting lost books:', error);
       }
     });
   }

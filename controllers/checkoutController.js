@@ -9,7 +9,7 @@ exports.getCheckedOutBooks = async (req, res) => {
             `SELECT c.id AS checkoutId, b.id AS bookId, b.title, b.author, b.category, c.checkout_date 
              FROM checkouts c
              INNER JOIN books b ON c.book_id = b.id
-             WHERE c.user_id = ? AND c.return_date IS NULL`,
+             WHERE c.user_id = ? AND c.return_date IS NULL AND b.status = 'checked_out'`,
             [userId]
         );
         res.json(books);
@@ -38,5 +38,23 @@ exports.returnBooks = async (req, res) => {
         res.send('Books returned successfully');
     } catch (error) {
         res.status(500).send('Error returning books');
+    }
+};
+
+// Report lost on selected books
+exports.reportLostBooks = async (req, res) => {
+    const { lostIds } = req.body;
+
+    try {
+        await db.query(
+            `UPDATE books SET status = 'lost' WHERE id IN (
+                SELECT book_id FROM checkouts WHERE id IN (?)
+            )`,
+            [lostIds]
+        );
+
+        res.send('Books reported lost successfully');
+    } catch (error) {
+        res.status(500).send('Error reporting lost books');
     }
 };
