@@ -88,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <td class="${book.status === 'lost' ? 'status-lost' : ''}">
           ${book.status.charAt(0).toUpperCase() + book.status.slice(1)}
           </td>
-          <td><button class="details-button" onclick="viewBookDetails(${book.id})">View Details</button></td
+          <td><button class="details-button" onclick="viewBookDetails(${book.id})">View Details</button></td>
         `;
       });
     } catch (error) {
