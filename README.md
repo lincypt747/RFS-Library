@@ -4,17 +4,17 @@ The RFS Library Management System is a web-based application designed to manage 
 
 Key Features:
 
-        •	User Selection: Users can log in by selecting their name from a dropdown list.
+        •  User Selection: Users can log in by selecting their name from a dropdown list.
         
-        •	Book Status Tracking: Books are categorized as Available, Checked Out, or Lost.
+        •  Book Status Tracking: Books are categorized as Available, Checked Out, or Lost.
         
-        •	Book Checkout: Users can view a list of available books and select multiple books to check out.
+        •  Book Checkout: Users can view a list of available books and select multiple books to check out.
         
-        •	Book Return/Report Lost: A separate section displays checked-out books, allowing users to return books or report lost.
+        •  Book Return/Report Lost: A separate section displays checked-out books, allowing users to return books or report lost.
         
-        •	Comments on Books: Users can view and add comments to books.
+        •  Comments on Books: Users can view and add comments to books.
         
-        •	Book Donation: Users can donate new books by entering details such as title, author, and category.
+        •  Book Donation: Users can donate new books by entering details such as title, author, and category.
 
 	
 This application integrates with a MySQL database to store user data, book details, checkouts, and comments.
