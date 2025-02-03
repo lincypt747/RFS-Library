@@ -21,4 +21,8 @@ This application integrates with a **MySQL database** to store user data, book d
 
 ## Instructions:
 
+Run `npm install` to install the required dependencies
+
+Run `nodemon server` to restart the node application
+
 Rename the **.env-sample** to **.env** and update the variables to connect to MySQL DB
