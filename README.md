@@ -1,6 +1,6 @@
 RFS Library Management System
 
-The RFS Library Management System is a web-based application designed to manage book checkouts, returns, and donations efficiently. It provides an intuitive interface for users to browse available books, check out books, return them, and add comments.
+The RFS Library Management System is a web-based application designed to manage book checkouts, returns, and donations efficiently. It provides an interface for users to browse available books, check out books, return them, and add comments.
 
 Key Features:
 
